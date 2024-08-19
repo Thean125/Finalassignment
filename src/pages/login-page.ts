@@ -1,4 +1,5 @@
 import { BrowserContext,Locator,Page, expect } from '@playwright/test';
+import { data } from '../../Dataset/logincredential';
 export class loginpage{
     page:Page;
     url:string;
@@ -16,8 +17,12 @@ export class loginpage{
     
     public async login(){  
         await this.page.goto(this.url)
-        await this.username.fill('102331')
-        await this.password.fill('Thean@14@')
+        for (const users of data){
+        await this.username.fill(users.user)
+        await this.password.fill(users.password)
+
+        }
+        
         await this.password.press('Enter')
         await this.page.waitForLoadState('load')
         //await this.logoutbutton.click()

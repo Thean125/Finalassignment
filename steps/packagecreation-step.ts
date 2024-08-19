@@ -11,6 +11,4 @@ const {Given, When, Then}=createBdd(test)
     //  Then("search for the created package",async({Navigation},)=>{
     //             await Navigation.transaction();
     //     })
-    //  Then("double click the package and open the workflow page",async({Navigation},)=>{
-    //                 await Navigation.transaction();
-    //     })
+    

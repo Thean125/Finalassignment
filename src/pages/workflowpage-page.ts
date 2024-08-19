@@ -11,7 +11,6 @@ constructor(page:Page){
 }
  public  async workflownav() {
         const pagepromise=this.page.waitForEvent('popup');
-        await this.page.pause();
         await this.page.locator('[class="pq-grid-cell pq-align-center ui-state-default"][pq-col-indx="1"]').nth(0).dispatchEvent('dblclick');
         const newpage = await pagepromise;
         await this.page.waitForTimeout(3000);

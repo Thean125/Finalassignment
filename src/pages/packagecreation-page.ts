@@ -14,6 +14,10 @@ export class createpackage{
     createbtn:Locator;
     logoutbutton:Locator;
     addsuccess:Locator;
+    attachment:Locator;
+    Addfiles:Locator;
+    uploadpopupclosebtn:Locator;
+    upload:Locator;
 
     constructor(page:Page){
         this.page=page;
@@ -24,6 +28,9 @@ export class createpackage{
         this.packagedesc=this.page.locator('[formid="618F9209-9707-4186-A8DC-A3F69D68F560"][name="Package Description"]')
         this.RDD=this.page.locator('[formid="618F9209-9707-4186-A8DC-A3F69D68F560"][name="Requested Delivery Date"]')
         this.RDDchoosedate=this.page.getByRole('link', { name: '30' })
+        this.attachment=this.page.locator('[class="fa fa-upload fileupload-button formupload "]')
+        this.Addfiles=this.page.locator('[id="fileUpload_browse"]')
+        this.uploadpopupclosebtn=this.page.locator('[class="btn-close"]').nth(7)
         this.projectlocation=this.page.getByRole('textbox',{ name:'Select Project location'})
         this.selectprojectloc=this.page.getByRole('option', { name: 'Chennai'}).nth(0)
         this.plannedstartdate=this.page.locator('[formid="618F9209-9707-4186-A8DC-A3F69D68F560"][name="Planned Start Date"]')
@@ -38,7 +45,7 @@ export class createpackage{
     public async addpackage(){
          // Validate the page title using if condition
          const title = await this.page.title();
-         if (title === 'Work Package') {
+         if (title === 'Dynamic APP - QA') {
          console.log('Page title is correct.');
              } else {
                 console.error(`Page title is incorrect. Expected 'Expected Title' but got '${title}'.`);
@@ -51,6 +58,11 @@ export class createpackage{
             await this.RDD.click()
             await this.page.waitForTimeout(2000)
             await this.RDDchoosedate.click()
+            //await this.attachment.click()
+            //await this.Addfiles.click()
+            //await this.page.pause()
+            //await this.Addfiles.setInputFiles('C:/Users/102331/OneDrive - Caresoft Global Private Ltd,/Desktop/Dynamic App-Automation/dynamicappsitesmatrix.xlsx')
+            //await this.uploadpopupclosebtn.click()
             await this.projectlocation.click()
             await this.selectprojectloc.click()
             await this.plannedstartdate.click()
