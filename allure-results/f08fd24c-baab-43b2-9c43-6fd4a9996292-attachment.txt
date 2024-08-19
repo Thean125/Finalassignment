@@ -1,0 +1,3 @@
+Error: Multiple step definitions matched for text: "navigate to the "work assignment" page link" (C:\Users\102331\OneDrive - Caresoft Global Private Ltd,\Desktop\Dynamic App-Automation\.features-gen\features\login.feature.spec.js)
+  navigate to the {string} page link - steps\pagenavigation-step.ts:4
+  navigate to the {string} page link - steps\workflowpage-step.ts:10
